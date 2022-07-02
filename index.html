@@ -16,31 +16,30 @@
 
 </head>
 <body>
+  <div>
+    <p>Total: <span id="total"></span></p>
+    <p>Preço R$<span id="preco"></span></p>
+    <button id="button">Comprar</button>
+  </div>
+
+  <div id="app-react"></div>
+
+
   <div id="app"></div>
 
   <script type="text/babel">
-    // function App(){
-    //   return <div>Meu app<div>
-    // }
+  const Comprar = () => {
+    const [contador,setContador] = React.useState(1)
 
-
-    //Podemos colocar JS dentro do html do React:
-    const implementa = () = {
-    function implementandoClick (event){
-      console.log(event.target.innerText)
-    }
-    return <button onClick={handleClick}>Comprar</button>
+    return (
+      <div>
+        <p>Total:{contador}</p>
+        <p>Preço:{contador * 250}</p>
+        <button onclick={() => setContador(contador + 1 )}>Comprar</button>
+      </div>
+    )
   }
-
-
-
-  //
-
-    // Sobre o método 'render': primeiro passamos o componente, o elemento de react que eu quero que ele renderize(apareca) e o segundo é onde eu quero renderiza-lo.
-
-    ReactDOM.render(<app>, document.getElementById('app')) 
-
-    Todo elemento React é criado com a função createElement. O Babel é o responsavel por transformar o elemento criado em JSX(que se parece com HTML) em funcoes de React
+  ReactDOM.render(<Comprar />,document.getElementById('app-react'))
   </script>
 </body>
 </html>

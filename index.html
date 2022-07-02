@@ -19,14 +19,28 @@
   <div id="app"></div>
 
   <script type="text/babel">
-    function App(){
-      return <div>Meu app<div>
-    }
+    // function App(){
+    //   return <div>Meu app<div>
+    // }
 
+
+    //Podemos colocar JS dentro do html do React:
+    const implementa = () = {
+    function implementandoClick (event){
+      console.log(event.target.innerText)
+    }
+    return <button onClick={handleClick}>Comprar</button>
+  }
+
+
+
+  //
 
     // Sobre o método 'render': primeiro passamos o componente, o elemento de react que eu quero que ele renderize(apareca) e o segundo é onde eu quero renderiza-lo.
 
-    ReactDOM.render(, document.getElementById('app')) 
+    ReactDOM.render(<app>, document.getElementById('app')) 
+
+    Todo elemento React é criado com a função createElement. O Babel é o responsavel por transformar o elemento criado em JSX(que se parece com HTML) em funcoes de React
   </script>
 </body>
 </html>
